@@ -1,0 +1,370 @@
+/* 1. ESTILIZAÇÃO BASE E VARIÁVEIS COM A NOVA PALETA */
+
+/* Paleta de cores definida e pronta para ser usada consistentemente */
+:root {
+    --primary-color: #ad2831;   /* Auburn - Vermelho vibrante para CTA */
+    --secondary-color: #640d14; /* Rosewood - Vinho escuro para títulos, fundos fortes */
+    --hover-color: #800e13;     /* Falu Red - Vermelho escuro para hovers */
+    
+    --background-color-light: #f8fafc; /* Fundo geral claro */
+    --background-color-alt: #fdf2f2;   /* Fundo alternado suave */
+    --card-background: #ffffff;        /* Fundo dos cards */
+    --text-color: #250902;             /* Black Bean - Quase preto para textos */
+    --white-color: #ffffff;
+    
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+/* 2. SEÇÃO PRINCIPAL (HERO) */
+.hero-section {
+    background-image: linear-gradient(rgba(37, 9, 2, 0.7), rgba(56, 4, 14, 0.7)), url('https://placehold.co/1200x600/250902/ad2831?text=Mundo+Místico+Minis');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.hero-content .subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+}
+
+/* 3. SEÇÃO DE BENEFÍCIOS (LAYOUT COM FLEXBOX) */
+.beneficios-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: center;
+}
+
+.beneficio-item {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    flex-basis: 31%;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.beneficio-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* 4. ESTILIZAÇÃO DA TABELA */
+#especificacoes {
+    background-color: var(--background-color-alt);
+}
+
+.tabela-container {
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    background-color: var(--card-background);
+}
+
+table thead {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #fee2e2;
+}
+
+table th {
+    font-family: var(--font-heading);
+    padding: 20px 15px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdf2f2;
+}
+
+table tbody tr:hover {
+    background-color: #fee2e2;
+}
+
+/* 5. ESTILIZAÇÃO DAS SEÇÕES DE COLEÇÃO (Novas e existentes) */
+.colecao-section {
+    text-align: center;
+}
+
+/* Fundo alternado para algumas seções de coleção */
+.colecao-section.alternate-bg {
+    background-color: var(--background-color-alt);
+}
+
+.colecao-section p {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+}
+
+.colecao-imagem-container {
+    margin-top: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.colecao-imagem-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* 6. SEÇÃO DEPOIMENTOS (Ajustada para múltiplos itens) */
+.depoimentos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+.depoimento-item {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-left: 5px solid var(--hover-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.depoimento-item blockquote {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.depoimento-item cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* 7. FOOTER E FORMULÁRIO */
+footer {
+    background-color: var(--secondary-color); 
+    color: var(--white-color);
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+footer h2 {
+    color: var(--white-color);
+}
+
+footer p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+form button:hover {
+    background-color: var(--hover-color);
+}
+
+.copyright {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 7.5. ADIÇÃO: ESTILOS PARA ÍCONES DE REDES SOCIAIS */
+.social-icons {
+    margin-top: 50px; /* Espaço acima dos ícones */
+    margin-bottom: 30px; /* Espaço abaixo dos ícones */
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 25px; /* Espaçamento entre os ícones */
+}
+
+.social-icons a {
+    color: var(--white-color); /* Cor branca para os ícones */
+    font-size: 2.2rem; /* Tamanho maior para destaque */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transição suave para hover */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.social-icons a:hover {
+    color: var(--primary-color); /* Cor primária no hover */
+    transform: translateY(-5px) scale(1.1); /* Efeito de "subir" e "aumentar" */
+}
+
+
+/* 8. ESTILOS PARA INTERATIVIDADE COM JAVASCRIPT */
+
+/* Estilos para a animação de "Scroll Reveal" */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(20px);
+    transition: all 0.7s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Estilos para as mensagens do formulário */
+#form-message {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+#form-message.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+#form-message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* 9. RESPONSIVIDADE (MEDIA QUERIES) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .beneficios-container,
+    .depoimentos-container {
+        flex-direction: column;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 50px 15px;
+    }
+}
